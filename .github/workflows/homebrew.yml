@@ -58,6 +58,7 @@ jobs:
           HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
         run: |
           brew tap-new pch/rawmakase-validation
+          brew trust pch/rawmakase-validation
           tap=$(brew --repository pch/rawmakase-validation)
           mkdir -p "$tap/Casks" "$RUNNER_TEMP/homebrew-apps"
           cp dist/homebrew-recipes/homebrew/rawmakase.rb "$tap/Casks/rawmakase.rb"
